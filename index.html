@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <title>Memo Pad</title>
+  </head>
+  <body>
+    <header>
+      <h1>Memo Pad</h1>
+    </header>
+
+    <main>
+      <section id="input-form">
+        <input
+          type="text"
+          id="title"
+          class="form"
+          placeholder="タイトルを入力"
+        />
+        <textarea id="text" class="form" placeholder="本文を入力"></textarea>
+      </section>
+      <section id="button-section">
+        <button id="save" class="button">保存</button>
+        <button id="clear" class="button">全て削除</button>
+      </section>
+      <section id="input-result">
+        <ul id="list"></ul>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+      $(function () {
+        console.log("読み込み完了");
+      });
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

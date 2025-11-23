@@ -1,0 +1,22 @@
+# 1.絶対に追跡させてはいけないもの
+# 秘匿情報(APIキー・パスワード・秘密鍵など）、
+# Gitの追跡から取り除きたい情報を格納する「環境ファイル」を作成
+.env
+
+# 2.共有の価値がないもの
+# 一時ファイル、設定ファイル
+*.log
+*.tmp
+*.swp
+.DS_Store
+__MACOSX/
+Thumbs.db
+*.cache
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.vscode/
