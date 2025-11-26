@@ -1,0 +1,16 @@
+body {
+  background-color: #d1c8e3;
+  z-index: 0;
+}
+
+.star {
+  color: #beabe3;
+}
+
+.button {
+  width: 140px;
+  height: 30px;
+  margin: 0 auto;
+  border-radius: 0%;
+  text-align: center;
+}
