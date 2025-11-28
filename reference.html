@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/reference.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <title>Memo Pad</title>
+    <title>ミロクのブックアーカイブ</title>
   </head>
   <body>
     <header>
-      <h1>Memo Pad</h1>
+      <p>
+        <span class="star-color">★</span>ミロクのブックアーカイブ<span
+          class="star-color"
+          >★</span
+        >
+      </p>
     </header>
 
     <main>
@@ -20,7 +25,7 @@
           type="text"
           id="title"
           class="form"
-          placeholder="本のタイトル"
+          placeholder="なになに？なんて本のなまえなんだ？"
           autocomplete="off"
         />
         <ul id="suggest-list"></ul>
@@ -28,24 +33,42 @@
         <textarea
           id="interest"
           class="form"
-          placeholder="気になった理由"
+          placeholder="本ってさ、世の中にい〜っぱいあるじゃん？&#10;なんでその本が気になったんだ？&#10;聞かせてよ！"
         ></textarea>
       </section>
 
       <section id="button-section">
         <button id="save" class="button">保存</button>
-        <!-- <button id="edit-before" class="button">書き直す</button> -->
         <button class="link button" data-url="./bookshelf.html">
           本棚へ移動
         </button>
       </section>
     </main>
-    <footer></footer>
+
+    <footer>
+      <p>アタイはミロク！<span class="miroku hint">🧞‍♀️</span>よろしくな！</p>
+      <br />
+      <p>「学ぶ門に書来る（まなぶかどにふみきたる）」っていうよな！</p>
+      <p>
+        でもさ、読みたい本があれもこれも、ってなかなか読む時間取れないよな？
+      </p>
+      <p>そういう時は、アタイの「ブックアーカイブ」を使ってみてよ！</p>
+      <br />
+      <p>使い方は簡単！本のなまえと、その本を知った時の</p>
+      <p>
+        <span class="emphasis">「これ気になる！読みたい！」</span>って気持ちを
+      </p>
+      <p><span class="emphasis">適当にダラダラ</span>書くだけさ！</p>
+      <p>あとは保存するだけ！続きは「本棚」に移動してから説明するよ！</p>
+      <br />
+      <p>ちなみに、アタイは勉強熱心なアンタ、好きだよ！</p>
+    </footer>
     <script>
       $(function () {
         console.log("読み込み完了");
       });
     </script>
+    <script src="js/common.js"></script>
     <script src="js/reference.js"></script>
   </body>
 </html>

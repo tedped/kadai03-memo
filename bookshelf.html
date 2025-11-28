@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/bookshelf.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <title>タイトルを入力してください</title>
+    <title>ミロクのブックアーカイブ</title>
   </head>
   <body>
-    <header></header>
+    <header>
+      <p>
+        見て！　保存した「これ気になる！読みたい！」が星になって飛んできた<span
+          class="star-color"
+          >★</span
+        >
+      </p>
+      <br />
+      <p><span class="reverse">🧞‍♀️</span>ということで、読んだら感想教えてね！</p>
+      <p>感想は何回でも書けるから！その時その時で感じることは違うでしょ？！</p>
+    </header>
     <main>
       <section id="bookshelf">
         <div class="book-icon"></div>
-        <!-- <div class="star star-plate">★</div> -->
       </section>
 
       <!-- <section id="read-bar">
@@ -22,21 +31,31 @@
       </section> -->
 
       <section id="input-result">
-        <ul id="result"></ul>
+        <ul id="result">
+          <li placeholder=""></li>
+        </ul>
       </section>
 
-      <section>
-        <textarea id="willing" class="form" placeholder="感想"></textarea>
+      <section id="review">
+        <div>
+          <textarea
+            id="feeling"
+            class="form"
+            placeholder="どうだった？面白かった？&#10;本を選んでここに感想を書いたら、下の「感想」ボタンを押して、&#10;アンタの感想を、アタイに聞かせてくれよな！"
+          ></textarea>
+        </div>
+        <div>
+          <button id="impression" class="button">感想</button>
+          <button id="delete" class="button">削除</button>
+          <button class="link button" data-url="./reference.html">
+            登録画面へ移動
+          </button>
+        </div>
       </section>
-      <button id="impression" class="button">感想を保存</button>
-      <button id="edit" class="button">編集</button>
-      <button id="delete" class="button">削除</button>
-      <button class="link button" data-url="./reference.html">
-        登録画面へ移動
-      </button>
     </main>
     <footer></footer>
     <script></script>
+    <script src="js/common.js"></script>
     <script src="js/bookshelf.js"></script>
   </body>
 </html>

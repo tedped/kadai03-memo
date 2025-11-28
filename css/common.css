@@ -3,8 +3,12 @@ body {
   z-index: 0;
 }
 
-.star {
-  color: #beabe3;
+.miroku {
+  font-size: 64px;
+}
+
+.star-color {
+  color: color(srgb 0.5055 0.0559 0.4991);
 }
 
 .button {
@@ -13,4 +17,10 @@ body {
   margin: 0 auto;
   border-radius: 0%;
   text-align: center;
+}
+
+.form {
+  width: 470px;
+  padding: 5px auto;
+  cursor: url(../img/cursor.png) 4 12, auto;
 }

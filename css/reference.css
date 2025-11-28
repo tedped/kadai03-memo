@@ -5,6 +5,7 @@ header {
   margin: 0 auto 20px auto;
   padding: 20px 0;
   border-bottom: #ccc solid 1px;
+  font-size: 26px;
 }
 
 /* main */
@@ -13,7 +14,7 @@ main {
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 500px;
 }
 #input-form {
   display: flex;
@@ -23,10 +24,6 @@ main {
   padding: 10px;
   border: gray solid 1px;
   border-radius: 5px;
-}
-.form {
-  width: 270px;
-  padding: 5px auto;
 }
 .star-arise {
   position: absolute;
@@ -51,6 +48,11 @@ main {
   background: #eee;
 }
 
+#interest {
+  height: 100px;
+  overflow: hidden;
+}
+
 #button-section {
   display: flex;
   justify-content: center;
@@ -64,6 +66,37 @@ main {
   border: gray solid 1px;
 }
 /* footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 3px;
+}
+footer p {
+  margin: 0 auto;
+}
+.emphasis {
+  font-size: 28px;
+  color: color(srgb 0.5055 0.0559 0.4991);
+}
+
+/* ヒントの吹き出し */
+.speech-bubble {
+  position: absolute;
+  padding: 10px;
+  font-size: 12px;
+  transform: translate(78%, -135%);
+  background-color: #fff;
+  border-radius: 8px;
+}
+.speech-bubble::before {
+  content: "◀︎";
+  position: absolute;
+  display: inline-block;
+  font-size: 20px;
+  transform: translate(-120%, 170%);
+  color: #fff;
+}
 
 /* keyframes */
 /* .star-arise のアニメーション1 */
