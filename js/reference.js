@@ -1,4 +1,4 @@
-// 1.入力欄
+// 入力欄
 
 // 本のタイトル候補を入力中に随時表示
 
@@ -20,7 +20,7 @@ $("#title")
 
 $(document).on("viewList", "#title", function () {
   const query = $(this).val();
-  if (query.length < 2) {
+  if (query.length < 1) {
     $("#suggest-list").empty();
     return;
   }
@@ -57,8 +57,11 @@ $(document).on("click", ".suggest-item", function () {
 
 // 入力クリックイベント
 $("#save").on("click", function () {
-  const key = $("#title").val();
-  const value = $("#interest").val();
+  let key = $("#title").val();
+  let value = $("#interest").val();
+
+  // fulfilledKey = $(this).data(key);
+  // fulfilledValue = $(this).data(value);
 
   localStorage.setItem(key, value);
   const html = `
@@ -67,12 +70,14 @@ $("#save").on("click", function () {
         <p>${value}</p>
     </li>`;
 
-  $("#result").append(html);
+  $("#result").val(html);
+
   $("#title").val("");
   $("#interest").val("");
 
   // 保存後、星が本棚ページに流れていく演出
-  const star = $("<div class='star star-arise'>★</div>");
+  // if (fulfilledKey && fulfilledValue) {
+  const star = $("<div class='star-color star-arise'>★</div>");
   $("main").append(star);
 
   const width = $("main").width();
@@ -80,7 +85,7 @@ $("#save").on("click", function () {
 
   const startX = Math.random() * width;
   const startY = Math.random() * height * 0.3;
-  const downX = startX + (Math.random() * 200 - 100);
+  const downX = startX + (Math.random() * 10 - 100);
   const downY = startY + (Math.random() * 200 + 100);
   const endX = downX + Math.random() * 300;
 
@@ -92,30 +97,23 @@ $("#save").on("click", function () {
     "--end-x": endX + "px",
   });
   star.addClass("move");
+  // }
+  // return;
 });
 
-// Clearクリックイベント
-$("#edit-before").on("click", function () {
-  localStorage.removeItem(this);
-  $("#result").empty();
-});
-
-// // 本棚ページ移動イベント
+//  本棚ページ移動イベント
 $(".link").on("click", function () {
   location.href = $(this).data("url");
 });
 
-// 2.出力欄
-
-// ローカルストレージのデータを取得し、ページに反映
-for (let i = 0; i < localStorage.length; i++) {
-  const key = localStorage.key(i);
-  const value = localStorage.getItem(key);
-  const html = `
-  <li>
-    <p>${key}</p>
-    <p>${value}</p>
-  </li>`;
-
-  $("#result").prepend(html);
-}
+// ヒント
+$(".hint").on("mouseover", function () {
+  $(this).append(`
+    <div class="speech-bubble">
+      🧞‍♀️からのヒントだよ！
+      <br />
+      気になる本の図書番号を知っているなら、本のなまえ欄で<br />「isbn:」の後に番号を入れてみると、<br />検索がはかどるよ！これイチオシだから！</div>`);
+});
+$(".hint").on("mouseout", function () {
+  $(this).find(".speech-bubble").fadeOut();
+});
