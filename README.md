@@ -16,7 +16,7 @@
 
 ## ③ アプリのデプロイ URL
 
-- https://tedped.github.io/kadai03-memo/
+- https://tedped.github.io/kadai03_memo/
 
 ## ④ アプリのログイン用 ID または Password（ある場合）
 
