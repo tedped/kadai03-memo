@@ -8,8 +8,8 @@ let year = now.getFullYear(); //年
 let month = now.getMonth() + 1; //月+１を足す
 let date = now.getDate(); //日
 let day = now.getDay(); //曜日（数値）
-let h = now.getHours(); //時
-let m = now.getMinutes(); //分
+let h = ("0" + now.getHours()).slice(-2); //時
+let m = ("0" + now.getMinutes()).slice(-2); //分
 //日時表示文字列の作成
 let dataTime =
   year + "-" + month + "-" + date + "(" + week[day] + ") " + h + ":" + m;

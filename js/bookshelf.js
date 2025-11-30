@@ -1,5 +1,6 @@
-// 1.サムネイル欄
-
+// サムネイル欄
+// localstorageに保存された本のタイトルデータをGooglebooksで参照し、サムネイルデータを取得
+// 取得したサムネイルデータを表示
 $(function () {
   const keys = Object.keys(localStorage);
 
@@ -32,6 +33,7 @@ $(function () {
   });
 });
 
+// サムネイルをクリックしたら、「検索結果」欄に「本のタイトル」「興味を持った理由」を表示
 $("main").on("click", ".thumbnail", function () {
   selectedThumbnail = $(this);
   selectedKey = $(this).data("key");
@@ -46,9 +48,9 @@ $("main").on("click", ".thumbnail", function () {
   $("#result").append(html);
 });
 
-// 2.各種ボタン
-
 // 「感想」ボタン
+// 「感想」欄に入力した内容を、タイムスタンプを付加して保存
+//
 $("#impression").on("click", function () {
   let key = selectedKey;
   let value = localStorage.getItem(selectedKey);

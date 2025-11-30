@@ -1,7 +1,6 @@
 // 入力欄
 
 // 本のタイトル候補を入力中に随時表示
-
 let isComposing = false;
 
 $("#title")
@@ -18,6 +17,7 @@ $("#title")
     }
   });
 
+//「本のタイトル」欄に入力した内容をGooglebooksで検索し、リスト表示
 $(document).on("viewList", "#title", function () {
   const query = $(this).val();
   if (query.length < 1) {
@@ -49,13 +49,15 @@ $(document).on("viewList", "#title", function () {
   });
 });
 
+// リストの中の項目を選択すると、その項目名が「本のタイトル」欄に自動で入力される
 $(document).on("click", ".suggest-item", function () {
   const selected = $(this).text();
   $("#title").val(selected);
   $("#suggest-list").empty();
 });
 
-// 入力クリックイベント
+// 「保存」ボタンのクリックイベント
+// 「本のタイトル」及び「興味を持った理由」をlocalstorageに保存
 $("#save").on("click", function () {
   let key = $("#title").val();
   let value = $("#interest").val();
@@ -101,12 +103,12 @@ $("#save").on("click", function () {
   // return;
 });
 
-//  本棚ページ移動イベント
+//  「本棚へ移動」ボタンのクリックイベント
 $(".link").on("click", function () {
   location.href = $(this).data("url");
 });
 
-// ヒント
+// ヒント（隠し要素）
 $(".hint").on("mouseover", function () {
   $(this).append(`
     <div class="speech-bubble">

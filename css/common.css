@@ -12,10 +12,11 @@ body {
 }
 
 .button {
-  width: 140px;
+  width: 100px;
   height: 30px;
   margin: 0 auto;
-  border-radius: 0%;
+  border-radius: 8px;
+  background-color: #c0b0df;
   text-align: center;
 }
 

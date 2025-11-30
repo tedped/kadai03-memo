@@ -23,6 +23,7 @@ header p {
   margin: 0 auto;
   padding: 30px;
   border: 1px solid;
+  border-radius: 16px;
   overflow: auto;
 }
 .book-icon {
@@ -64,6 +65,7 @@ header p {
   height: 150px;
   margin: 20px auto;
   border: gray solid 1px;
+  border-radius: 6px;
   overflow: auto;
 }
 #review {
@@ -77,6 +79,7 @@ header p {
 #feeling {
   height: 70px;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 /* footer */
