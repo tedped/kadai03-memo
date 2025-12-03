@@ -37,7 +37,6 @@ header p {
 .icon {
   margin: 5px auto;
   padding: 10px;
-
   animation: pulseY 2s ease-in-out infinite alternate;
 }
 .thumbnail {
