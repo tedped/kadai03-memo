@@ -60,25 +60,38 @@ $(document).on("click", ".suggest-item", function () {
 // 「本のタイトル」及び「興味を持った理由」をlocalstorageに保存
 $("#save").on("click", function () {
   let key = $("#title").val();
-  let value = $("#interest").val();
+  console.log("key =", key, "| JSON.stringify =", JSON.stringify(key));
+  let interest = $("#interest").val();
+  let bookObj = {
+    t: key,
+    iDate: dataTime,
+    i: interest,
+    f: "",
+  };
 
-  // fulfilledKey = $(this).data(key);
-  // fulfilledValue = $(this).data(value);
-
-  localStorage.setItem(key, value);
+  let json = JSON.stringify(bookObj);
+  localStorage.setItem(key, json);
   const html = `
     <li>
-        <p>${key}</p>
-        <p>${value}</p>
+        <p>${bookObj.t}</p>
+        <p>${bookObj.iDate}</p>
+        <p>${bookObj.i}</p>
     </li>`;
 
-  $("#result").val(html);
+  // let key = $("#title").val();
+  // let value = $("#interest").val();
+
+  // localStorage.setItem(key, value);
+  // const html = `
+  //   <li>
+  //       <p>${key}</p>
+  //       <p>${value}</p>
+  //   </li>`;
 
   $("#title").val("");
   $("#interest").val("");
 
   // 保存後、星が本棚ページに流れていく演出
-  // if (fulfilledKey && fulfilledValue) {
   const star = $("<div class='star-color star-arise'>★</div>");
   $("main").append(star);
 
@@ -99,8 +112,6 @@ $("#save").on("click", function () {
     "--end-x": endX + "px",
   });
   star.addClass("move");
-  // }
-  // return;
 });
 
 //  「本棚へ移動」ボタンのクリックイベント
