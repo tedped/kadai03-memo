@@ -4,6 +4,7 @@ body {
   z-index: 0;
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: "MyFont";
   color: rgb(128, 108, 169);
 }
 
@@ -28,4 +29,10 @@ body {
   width: 470px;
   padding: 5px auto;
   cursor: url(../img/cursor.png) 4 12, auto;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url(../font/MPLUSRounded1c-Bold.ttf) format("truetype"),
+    local("Helvetica Neue Bold");
 }
